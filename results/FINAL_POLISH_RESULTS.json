@@ -1,0 +1,65 @@
+{
+  "three_seed": {
+    "experiment": "3-seed medium doc comparison",
+    "seeds": [
+      42,
+      123,
+      456
+    ],
+    "n_qa_pairs": 200,
+    "baseline": {
+      "mean": 0.855,
+      "std": 0.0,
+      "per_seed": [
+        0.855,
+        0.855,
+        0.855
+      ]
+    },
+    "budgetmem": {
+      "mean": 0.8591666666666665,
+      "std": 0.0,
+      "per_seed": [
+        0.8591666666666665,
+        0.8591666666666665,
+        0.8591666666666665
+      ]
+    },
+    "timestamp": "2026-04-08T04:54:14.588337"
+  },
+  "budget_sensitivity": {
+    "baseline_f1": 0.8566666666666667,
+    "results": {
+      "0.1": {
+        "f1_mean": 0.6933333333333332,
+        "storage_savings_pct": 90.41330645161288
+      },
+      "0.2": {
+        "f1_mean": 0.8783333333333333,
+        "storage_savings_pct": 80.8266129032258
+      },
+      "0.3": {
+        "f1_mean": 0.8633333333333333,
+        "storage_savings_pct": 71.23991935483872
+      },
+      "0.4": {
+        "f1_mean": 0.8583333333333333,
+        "storage_savings_pct": 61.65322580645163
+      },
+      "0.5": {
+        "f1_mean": 0.855,
+        "storage_savings_pct": 51.12903225806451
+      },
+      "0.7": {
+        "f1_mean": 0.8,
+        "storage_savings_pct": 31.955645161290324
+      },
+      "0.9": {
+        "f1_mean": 0.8666666666666666,
+        "storage_savings_pct": 12.782258064516128
+      }
+    },
+    "n_examples": 100
+  },
+  "timestamp": "2026-04-08T05:02:42.187694"
+}

@@ -1,0 +1,81 @@
+{
+  "ablation": {
+    "full": {
+      "f1_mean": 0.8616666666666666,
+      "f1_std": 0.23160670686892182
+    },
+    "without_entity_density": {
+      "f1_mean": 0.8616666666666666,
+      "f1_std": 0.23160670686892182,
+      "f1_drop": 0.0,
+      "f1_drop_pct": 0.0
+    },
+    "without_tfidf_importance": {
+      "f1_mean": 0.8583333333333333,
+      "f1_std": 0.23555490041837618,
+      "f1_drop": 0.0033333333333332993,
+      "f1_drop_pct": 0.38684719535782974
+    },
+    "without_position_bias": {
+      "f1_mean": 0.86,
+      "f1_std": 0.23180451534284946,
+      "f1_drop": 0.0016666666666665941,
+      "f1_drop_pct": 0.19342359767890843
+    },
+    "without_numerical_density": {
+      "f1_mean": 0.6969999999999998,
+      "f1_std": 0.39580003368704586,
+      "f1_drop": 0.16466666666666674,
+      "f1_drop_pct": 19.110251450676994
+    },
+    "without_discourse_markers": {
+      "f1_mean": 0.6225,
+      "f1_std": 0.41078431080069255,
+      "f1_drop": 0.23916666666666653,
+      "f1_drop_pct": 27.75628626692455
+    },
+    "without_question_presence": {
+      "f1_mean": 0.8616666666666666,
+      "f1_std": 0.23160670686892182,
+      "f1_drop": 0.0,
+      "f1_drop_pct": 0.0
+    }
+  },
+  "medium_comparison": {
+    "experiment": "Medium docs three-way comparison",
+    "n_qa_pairs": 200,
+    "baseline_rag": {
+      "f1_mean": 0.855,
+      "f1_std": 0.20159778437935935
+    },
+    "llmlingua2": {
+      "f1_mean": 0.5320989756779452,
+      "f1_std": 0.42752972486951546,
+      "errors": 0
+    },
+    "budgetmem": {
+      "f1_mean": 0.8616666666666666,
+      "f1_std": 0.23160670686892182
+    },
+    "timestamp": "2026-04-08T01:53:39.520247"
+  },
+  "qasper": {
+    "experiment": "Qasper benchmark (real academic papers)",
+    "n_qa_pairs": 102,
+    "avg_doc_length": 3608.2450980392155,
+    "baseline_rag": {
+      "f1_mean": 0.17868246918147135,
+      "f1_std": 0.24713798238742415
+    },
+    "llmlingua2": {
+      "f1_mean": 0.1749785546050101,
+      "f1_std": 0.22894676619003715
+    },
+    "budgetmem": {
+      "f1_mean": 0.16541774896675762,
+      "f1_std": 0.2135290954656745
+    },
+    "timestamp": "2026-04-08T02:03:46.974879"
+  },
+  "timestamp": "2026-04-08T02:03:46.984267"
+}
