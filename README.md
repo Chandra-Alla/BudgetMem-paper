@@ -21,6 +21,18 @@ BudgetMem is a training-free architecture that selectively retains only high-sal
 
 The full pipeline runs on a $10/month Google Colab instance with a single NVIDIA T4 GPU. No GPU or training is needed for the compression step.
 
+### Cross-Model Validation
+
+To confirm the result is not specific to one model, we replicate the medium-document comparison on **Qwen2.5-7B-Instruct** — a different scale (7B vs 3B) and family (Qwen vs Llama). The ranking holds:
+
+| Method | Llama-3.2-3B | Qwen2.5-7B |
+|---|---|---|
+| Baseline RAG | 0.855 | 0.900 |
+| LLMLingua-2 | 0.532 | 0.773 |
+| **BudgetMem** | **0.859** | **0.960** |
+
+BudgetMem keeps its lead over LLMLingua-2 and matches or exceeds the all-chunks baseline at both scales.
+
 ## Repository Structure
 
 ```
@@ -34,12 +46,14 @@ The full pipeline runs on a $10/month Google Colab instance with a single NVIDIA
 │   ├── 02_narrativeqa_experiments.ipynb  # NarrativeQA with 3 seeds
 │   ├── 03_llmlingua_baseline.ipynb    # LLMLingua-2 comparison
 │   ├── 04_qasper_and_ablation.ipynb   # Qasper benchmark + per-feature ablation
-│   └── 05_three_seed_and_budget_sensitivity.ipynb  # Final polish experiments
+│   ├── 05_three_seed_and_budget_sensitivity.ipynb  # Final polish experiments
+│   └── 06_cross_model_7b_validation.ipynb  # Qwen2.5-7B cross-model check
 ├── results/                           # Raw experiment outputs (JSON)
 │   ├── ALL_REVISION_RESULTS.json
 │   ├── FINAL_POLISH_RESULTS.json
 │   ├── narrativeqa_final_results.json
-│   └── llmlingua_results.json
+│   ├── llmlingua_results.json
+│   └── cross_model_7b_summary.json
 └── figures/                           # Paper figures
     ├── figure1_budget_sensitivity.png
     ├── figure2_length_scaling.png
@@ -53,14 +67,14 @@ All notebooks are designed to run on Google Colab with a free or Pro tier (T4 GP
 ### Requirements
 
 - Python 3.10+
-- HuggingFace account with access to `meta-llama/Llama-3.2-3B-Instruct`
+- HuggingFace account with access to `meta-llama/Llama-3.2-3B-Instruct` (the cross-model notebook uses `Qwen/Qwen2.5-7B-Instruct`, which is open access — no gating)
 - Google Colab Pro recommended (~$10/month) for sustained T4 access
 
 ### Steps
 
 1. **Clone this repo:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/budgetmem.git
+   git clone https://github.com/Chandra-Alla/BudgetMem-paper.git
    ```
 
 2. **Open notebooks in Colab:** Upload any of the `.ipynb` files in `notebooks/` to Google Colab, or open them directly via the Colab File menu.
@@ -71,6 +85,7 @@ All notebooks are designed to run on Google Colab with a free or Pro tier (T4 GP
    - `03_llmlingua_baseline.ipynb` for the LLMLingua-2 comparison
    - `04_qasper_and_ablation.ipynb` for the Qasper benchmark and per-feature ablation
    - `05_three_seed_and_budget_sensitivity.ipynb` for the final polish experiments
+   - `06_cross_model_7b_validation.ipynb` for the Qwen2.5-7B cross-model validation
 
 4. **Authenticate with HuggingFace** when prompted (paste your HF token).
 

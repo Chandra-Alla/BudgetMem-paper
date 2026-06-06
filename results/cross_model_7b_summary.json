@@ -1,0 +1,19 @@
+{
+  "experiment": "BudgetMem 7B - Medium Docs Three-Way (Cross-Model Validation)",
+  "model": "Qwen/Qwen2.5-7B-Instruct",
+  "precision": "4-bit NF4 (bitsandbytes)",
+  "gpu": "Tesla T4",
+  "n_examples": 200,
+  "results": {
+    "baseline_rag": 0.9,
+    "llmlingua_2": 0.7733333333333333,
+    "budgetmem": 0.96
+  },
+  "reference_3b": {
+    "model": "meta-llama/Llama-3.2-3B-Instruct",
+    "baseline_rag": 0.855,
+    "llmlingua_2": 0.532,
+    "budgetmem": 0.859
+  },
+  "note": "Replicates the medium-document three-way comparison on a 7B model from a different family (Qwen vs Llama). BudgetMem's lead over LLMLingua-2 and parity-or-better vs baseline both hold."
+}
